@@ -35,13 +35,18 @@ st.markdown("""
 <style>
 
 /* 1. REMOVE WHITE SPACE & DEFAULT HEADER */
-header {visibility: hidden;}
-[data-testid="stHeader"] {background: rgba(0,0,0,0);}
-[data-testid="stAppViewContainer"] > section:nth-child(2) > div:nth-child(1) {
-    padding-top: 0px !important;
+/* Hide header but keep sidebar toggle button */
+header {
+    background: transparent !important;
 }
-.block-container {
-    padding-top: 5px !important;
+
+/* Style the sidebar toggle icon */
+button[kind="header"] {
+    color: #8f96a3 !important;
+}
+
+button[kind="header"]:hover {
+    color: white !important;
 }
 
 /* 2. THE RGB NEON GRADIENT STRIP (Pink, Cyan, Orange) */
