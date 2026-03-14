@@ -209,34 +209,34 @@ div[data-baseweb="slider"] > div:first-child > div {
     border-bottom: 1px solid #2a2a33;
 }
 
-/* RGB Neon Gradient Title */
-.neon-title {
-    font-family: 'Russo One', sans-serif;
-    font-size: 100px;
-    letter-spacing: 1px;
-    margin: 0;
-    font-weight: 600;
 
+/* 1. UPDATED MARKET OVERVIEW TITLE */
+.market-title {
+    font-family: 'Russo One', sans-serif !important; /* Specific font override */
+    font-weight: 700 !important;
+    font-size: 80px !important; /* Adjusted for better fit */
+    letter-spacing: 2px !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+
+    /* RGB Neon Gradient */
     background: linear-gradient(
         90deg,
-        #f44786 0%,
-        #b07cc6 25%,
-        #61d5f3 50%,
-        #ffcb85 75%,
-        #f44786 100%
-    );
+        #f44786,
+        #61d5f3,
+        #ffcb85,
+        #f44786
+    ) !important;
 
-    background-size: 400% 100%;
-    animation: neonFlow 10s linear infinite;
+    background-size: 400% 100% !important;
+    animation: neonFlow 10s linear infinite !important;
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 6px rgba(244,71,134,0.35),
-        0 0 12px rgba(97,213,243,0.25);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block !important; /* Required for background-clip to work consistently */
 }
 
+    
 /* TYPOGRAPHY */
 .sub-title {
     font-family: 'Orbitron', sans-serif;
@@ -451,7 +451,7 @@ best_genre = filtered_df.groupby("Genre")["Global_Sales"].sum().idxmax() if not 
 col_left, col_right = st.columns([2, 1])
 
 with col_left:
-    st.markdown('<h1 class="neon-title">MARKET OVERVIEW</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="market-title">MARKET OVERVIEW</h1>', unsafe_allow_html=True)
     st.markdown(f"""
     <div style="margin-top: 15px; display: flex; align-items: center; gap: 15px;">
         <div style="background: #f44786; height: 20px; width: 4px; border-radius: 2px;"></div>
